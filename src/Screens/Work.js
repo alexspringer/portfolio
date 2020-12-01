@@ -12,7 +12,7 @@ import SafeSpaceHome from "../Assets/SafeSpace/SafeSpaceHome.jpg";
 const WorkScreen = (props) => {
   return (
     <Container fluid>
-      <Row className="bg-secondary p-5">
+      <Row style={{ backgroundColor: "#020720" }} className=" p-5">
         <Container fluid>
           <Row>
             <Col>
@@ -25,7 +25,8 @@ const WorkScreen = (props) => {
                 </Col>
               </Row>
               <p style={{ width: "70%" }} class="text-light">
-                A mobile chess application for both Android and iOS.
+                A mobile chess application for both Android and iOS. (and c++
+                prototype.)
               </p>
               <Button className="mb-4">
                 <Link style={{ color: "white" }} to="/work/Foolsmate">
@@ -86,20 +87,172 @@ const WorkScreen = (props) => {
             </Col>
           </Row>
         </Container>
-        <Row></Row>
       </Row>
 
-      <Row>
-        <h1> Bitmap Filters </h1>
+      <Row className="bg-light p-5">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Row>
+                <h1 class=""> Bitmap Filters </h1>
+                <p style={{ width: "70%" }} class="">
+                  A C++ app that edits bitmaps following procedures to add
+                  various filters to images.
+                </p>
+              </Row>
+              <Row>
+                <Button className="mb-4">
+                  <Link style={{ color: "white" }} to="/work/Bitmap">
+                    Learn More!
+                  </Link>
+                </Button>
+              </Row>
+            </Col>
+            <Col>
+              <Container>
+                <img
+                  class="rounded float-right mr-5"
+                  style={{ width: 300, height: 600 }}
+                  alt="gamestart"
+                  src={SafeSpaceHome}
+                />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </Row>
-      <Row>
-        <h1> IRC Chat App</h1>
+
+      <Row style={{ backgroundColor: "#020720" }} className="p-5">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Row>
+                <h1 class=" text-light"> IRC Chat App </h1>
+                <p style={{ width: "70%" }} class="text-light">
+                  A simple chat app.
+                </p>
+              </Row>
+              <Row>
+                <Button className="mb-4">
+                  <Link style={{ color: "white" }} to="/work/IRC">
+                    Learn More!
+                  </Link>
+                </Button>
+              </Row>
+            </Col>
+            <Col>
+              <Container>
+                <img
+                  class="rounded float-right mr-5"
+                  style={{ width: 300, height: 600 }}
+                  alt="gamestart"
+                  src={SafeSpaceHome}
+                />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </Row>
-      <Row>
-        <h1> XV6 </h1>
+
+      <Row className="bg-dark p-5">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Row>
+                <h1 class=" text-light"> Sports Scoreboard </h1>
+                <p style={{ width: "70%" }} class="text-light">
+                  A sports website that uses the ESPN api to display stats and
+                  information about various teams and sports.
+                </p>
+              </Row>
+              <Row>
+                <Button className="mb-4">
+                  <Link style={{ color: "white" }} to="/work/SportsScoreboard">
+                    Learn More!
+                  </Link>
+                </Button>
+              </Row>
+            </Col>
+            <Col>
+              <Container>
+                <img
+                  class="rounded float-right mr-5"
+                  style={{ width: 300, height: 600 }}
+                  alt="gamestart"
+                  src={SafeSpaceHome}
+                />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </Row>
-      <Row>
-        <h1> Deterministic Finite Automaton </h1>
+
+      <Row className="bg-light p-5">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Row>
+                <h1 class=""> XV6</h1>
+              </Row>
+              <Row>
+                <p style={{ width: "70%" }} class="">
+                  An operating system written in C.
+                </p>
+              </Row>
+              <Row>
+                <Button className="mb-4">
+                  <Link style={{ color: "white" }} to="/work/XV6">
+                    Learn More!
+                  </Link>
+                </Button>
+              </Row>
+            </Col>
+            <Col>
+              <Container>
+                <img
+                  class="rounded float-right mr-5"
+                  style={{ width: 300, height: 600 }}
+                  alt="gamestart"
+                  src={SafeSpaceHome}
+                />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </Row>
+
+      <Row style={{ backgroundColor: "#020720" }} className="p-5">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Row>
+                <h1 class="text-light"> DFA </h1>
+              </Row>
+              <Row>
+                <p style={{ width: "70%" }} class="text-light">
+                  A simulation of a deterministic finite automaton.
+                </p>
+              </Row>
+              <Row>
+                <Button className="mb-4">
+                  <Link style={{ color: "white" }} to="/work/XV6">
+                    Learn More!
+                  </Link>
+                </Button>
+              </Row>
+            </Col>
+            <Col>
+              <Container>
+                <img
+                  class="rounded float-right mr-5"
+                  style={{ width: 300, height: 600 }}
+                  alt="gamestart"
+                  src={SafeSpaceHome}
+                />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </Row>
     </Container>
   );

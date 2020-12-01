@@ -60,7 +60,7 @@ function App() {
             <FoolsmateScreen />
           </Route>
           <Route path="/about">
-            <AboutScreen />
+          
           </Route>
           <Route path="/work">
             <WorkScreen />

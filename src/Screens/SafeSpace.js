@@ -23,12 +23,13 @@ import Firebase from "../Assets/Firebase.png";
 const SafeSpaceScreen = (props) => {
   return (
     <Container fluid>
-      <h1> Safe_ </h1>
-      <p>
-        An Android lifestyle app to help users be active and engaged during the
-        COVID-19 pandemic.
-      </p>
-      <h2> Technology Used: </h2>
+      <Container fluid className="mx-0 my-5 text-center">
+        <h1> Safe_ </h1>
+        <p class="lead text-muted">
+          An Android lifestyle app to help users be active and engaged during
+          the COVID-19 pandemic.
+        </p>
+      </Container>
 
       <Row className="my-5">
         <Col>
@@ -95,42 +96,78 @@ const SafeSpaceScreen = (props) => {
           </a>
         </Col>
       </Row>
-      <Container
-        fluid
-        className="bg-dark p-5 my-5 d-flex justify-content-around"
-      >
-        <img style={{ height: 800, width: 500 }} src={Home} alt="" />
-        <img style={{ height: 800, width: 500 }} src={Profile} alt="" />
+
+      <Container fluid className="my-2 d-flex justify-content-around">
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-info">
+          <Container className="my-3 py-3 text-center text-white">
+            <h2 class="display-5">Home</h2>
+            <p>Find available challenges and health points remaining.</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Home} alt="" />
+        </Container>
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-light">
+          <Container className="my-3 py-3 text-center">
+            <h2 class="display-5">Profile</h2>
+            <p> Show off level and weeks "survived".</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Profile} alt="" />
+        </Container>
       </Container>
 
-      <Container
-        fluid
-        className="bg-secondary p-5 my-5 d-flex justify-content-around"
-      >
-        <img style={{ height: 800, width: 500 }} src={Challenges} alt="" />
-        <img style={{ height: 800, width: 500 }} src={Heatmap} alt="" />
+      <Container fluid className="my-2 d-flex justify-content-around">
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-light">
+          <Container className="my-3 py-3 text-center">
+            <h2 class="display-5">Challenges</h2>
+            <p> Complete challenges, earn experience, and level up!</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Challenges} alt="" />
+        </Container>
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-dark">
+          <Container className="my-3 py-3 text-center text-white">
+            <h2 class="display-5">Heatmap</h2>
+            <p> Color coded zipcodes based on COVID-19 cases per zipcode</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Heatmap} alt="" />
+        </Container>
       </Container>
 
-      <Container
-        fluid
-        className="bg-dark p-5 my-5 d-flex justify-content-around"
-      >
-        <img style={{ height: 800, width: 500 }} src={GotToClose} alt="" />
-        <img
-          style={{ height: 800, width: 500 }}
-          src={HomeScreenWithHearts}
-          alt=""
-        />
+      <Container fluid className="my-2 d-flex justify-content-around">
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-info">
+          <Container className="my-3 py-3 text-center text-white">
+            <h2 class="display-5">Settings: Before</h2>
+            <p> Personalize theme and health point icons.</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Themes} alt="" />
+        </Container>
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-light">
+          <Container className="my-3 py-3 text-center">
+            <h2 class="display-5">Settings: After</h2>
+            <p> Using the arctic theme!</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={Settings} alt="" />
+        </Container>
       </Container>
 
-      <Container
-        fluid
-        className="bg-secondary p-5 my-5 d-flex justify-content-around"
-      >
-        <img style={{ height: 800, width: 500 }} src={Themes} alt="" />
-        <img style={{ height: 800, width: 500 }} src={Settings} alt="" />
+      <Container fluid className="my-2 d-flex justify-content-around">
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-light">
+          <Container className="my-3 py-3 text-center">
+            <h2 class="display-5">Home: After</h2>
+            <p> Health icons are now hearts + arctic theme!</p>
+          </Container>
+          <img
+            style={{ height: 640, width: 400 }}
+            src={HomeScreenWithHearts}
+            alt=""
+          />
+        </Container>
+        <Container className="py-5 mx-2 d-flex flex-column align-items-center justify-content-center bg-dark">
+          <Container className="my-3 py-3 text-center text-white">
+            <h2 class="display-5">Bluetooth proximity detection</h2>
+            <p> Getting to close to other devices causes health point loss.</p>
+          </Container>
+          <img style={{ height: 640, width: 400 }} src={GotToClose} alt="" />
+        </Container>
       </Container>
-
     </Container>
   );
 };
