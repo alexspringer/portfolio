@@ -1,12 +1,6 @@
-import logo from "./logo.svg";
-//import "./App.css";
-import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -17,6 +11,10 @@ import WorkScreen from "./Screens/Work.js";
 import SafeSpaceScreen from "./Screens/SafeSpace.js";
 import FoolsmateScreen from "./Screens/Foolsmate.js";
 import HomeScreen from "./Screens/Home.js";
+import BitmapScreen from "./Screens/Bitmap.js";
+import ContactScreen from "./Screens/Contact.js";
+
+import Github from "./Assets/GitHub.png";
 
 function App() {
   return (
@@ -50,6 +48,16 @@ function App() {
                 </Nav.Link>
               </Nav.Item>
             </Nav>
+            <Container fluid className="d-inline d-lg-flex justify-content-end">
+              <a href="https://github.com/alexspringer?tab=repositories">
+                <img
+                  className="my-1"
+                  style={{ width: 40, height: 40 }}
+                  src={Github}
+                  alt=""
+                />
+              </a>
+            </Container>
           </Navbar.Collapse>
         </Navbar>
         <Switch>
@@ -59,8 +67,14 @@ function App() {
           <Route path="/work/Foolsmate">
             <FoolsmateScreen />
           </Route>
+          <Route path="/work/Bitmap">
+            <BitmapScreen />
+          </Route>
+          <Route path="/contact">
+            <ContactScreen />
+          </Route>
           <Route path="/about">
-          
+            <AboutScreen />
           </Route>
           <Route path="/work">
             <WorkScreen />

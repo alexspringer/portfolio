@@ -2,35 +2,148 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import grandmaster from "../Assets/fiddle.jpg"
+
+import grandmaster from "../Assets/About/Grandmaster.png";
+import Warcraft from "../Assets/About/wow.png";
 
 const AboutScreen = (props) => {
   return (
     <Container fluid>
-      <Row className="text-center">
-        <Col className="position-relative p-3 p-md-5 m-md-3 text-center">
-          <h2 class="display-4 font-weight-normal">Hi! I'm Alex</h2>
-          <p class="lead">
-            Here is some text explaining who I am, what ive done, and what I
-            like to do!
-          </p>
-        </Col>
-      </Row>
-      <Row fluid className="justify-content-around text-center">
-        <Col xs={5} className="border border-danger">
-          <h2>League of Legends</h2>
-          <img alt="league rank" src={"data:image/jpeg;base64,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"}/>
-          <p class="lead mt-3"> I am an avid League of Legends player. I have been playing for years and my all time peak rank on the North American server is 512. One day I even hope to work for riot, the creators of League of Legends.</p>
-        </Col>
-        <Col xs={5} className="border border-primary">
-          <h2> Graduated College </h2>
-        </Col>
-      </Row>
-      <Row className="text-center">
-        <Col>
-          <h2 class="test-"> Cycling </h2>
-        </Col>
-      </Row>
+      <Container className="p-2 my-4">
+        <h2 class="mb-3 text-center"> Graduated College </h2>
+        <p class="lead">
+          I recently graduated from Portland State University (August 2020)
+          after attending for 5 years!
+        </p>
+
+        <p class="lead">
+          The reason I decided to move more slowly through university than
+          traditional four year approaches is because I was working nearly full
+          time at Fred Meyer. I wanted to give the subject matter the time it
+          deserved so I reduced my course load slightly to make sure I really
+          learned the material. I am very happy with my approach because I was
+          able to graduate from university debt free!
+        </p>
+
+        <p class="lead">
+          Due to the world being put on hold because of the current COVID-19
+          pandemic, and the fact I hadn’t had an actual summer vacation in
+          years, I decided to take a few months off to cycle, work on a few
+          passion projects, and have fun playing games like League of Legends
+          and World of Warcraft.
+        </p>
+
+        <p class="lead">
+          The time off was great but now I am ready to use the skills I learned
+          in university and apply them to the world. I am ready to build,
+          innovate, and of course, have fun!
+        </p>
+      </Container>
+
+      <Container className="p-2 my-4">
+        <h2 class="mb-3 text-center"> Work Experience </h2>
+        <p class="lead">
+          My first and only work experience to date was my job working at Fred
+          Meyer. At Fred Meyer I worked as a service deli associate. When I
+          first started my responsibilities were helping customers by slicing
+          lunch meats, making sandwiches and pizzas, and serving hot food.
+        </p>
+
+        <p class="lead">
+          After a few months I was given the opportunity to learn how to fry
+          cook and I was ultimately promoted to that position. Around the same
+          time I also became the closing supervisor since I was trained and well
+          equipped to handle any task in my department. Now I was responsible
+          for cooking all of the hot foods, maintaining the fryers, ovens, and
+          cook area, dishes, delegating tasks to other associates, and handling
+          any customer deli related complaints.
+        </p>
+
+        <p class="lead">
+          While it may be anecdotal, this is the second time I was promoted to a
+          leadership position in the past few years. During my final senior
+          capstone project, (The Safe_ project in the work section of this
+          portfolio) I was promoted from front-end developer to front-end team
+          lead. In both the deli, and my team project, I never explicitly sought
+          after a leadership position, but found myself in one in both
+          scenarios. While I don’t think leadership is one of my strengths, it
+          seems to be a position I am finding myself in more frequently.
+        </p>
+
+        <p class="lead">
+          I left Fred Meyer in March of 2020 for a few different reasons. The
+          first reason was I had earned enough money to pay for the rest of my
+          education with around $6000 to spare, which would allow me to dedicate
+          more time to school and graduate a term quicker. The second reason was
+          due to the COVID-19 pandemic ramping up. My mom makes significantly
+          more money than I was working at the deli, so it didn’t make sense for
+          me to expose myself to the virus and in turn potentially infect her,
+          making her unable to work. Ultimately I left Fred Meyer with good
+          standing and I believe upper management was sad to see me go.
+        </p>
+      </Container>
+
+      <Container className="p-2 my-4">
+        <h2 class="mb-3 text-center"> Cycling </h2>
+        <p class="lead">
+          I enjoy cycling because it gets me out of the house and is a good form
+          of exercise. During university I would make the long bike ride to
+          school every day (38 miles round trip). These rides were great
+          exercise and provided an excellent outlet for stress allowing me to
+          think clearer and focus better during class. Additionally, staying
+          healthy is more important now than ever given the current COVID-19
+          pandemic, and will be for quite some time as it appears this pandemic
+          won’t be going anywhere anytime soon. One day I want to cycle from
+          Portland to the coast (around 120 mile ride) and maybe even cross
+          country one day.
+        </p>
+      </Container>
+
+      <Container className="p-2 my-4">
+        <h2 class="mb-3 text-center">Gaming</h2>
+        <Row className="">
+          <Col>
+            <p class="lead">
+              When i’m not programming, cycling, or working, I enjoy playing
+              video games. Who would've thought a CS graduate would play video
+              games. My two favorite games are League of Legends (LoL) and World
+              of Warcraft (WoW).
+            </p>
+
+            <p class="lead">
+              I have been playing League for years. My all time peak rank on the
+              North American server is 512 (out of 2 million+ players), and I
+              have been a high rated player since then.
+            </p>
+
+            <p class="lead">
+              I have been playing World of Warcraft off and on since 2008.
+              Recently I have been enjoying the latest expansion to the
+              franchise, Shadowlands. Like in League of Legends, I am also a
+              high end player in WOW. I ended in the top 2% in both the 2v2 and
+              3v3 arena ladders, and I routinely defeat the most difficult
+              player vs environment (PvE) encounters blizzard develops;
+              encounters that are only ever seen and defeated by a small portion
+              of the playerbase.
+            </p>
+
+            <p class="lead">
+              As ludicrous as it may sound, I believe that my time playing both
+              League of Legends and World of Warcraft has bolstered my teamwork
+              and problem solving skills, due to both WoW and League being team
+              based strategy games. Additionally, while playing these games I
+              have met many great people from all around North America. A few of
+              whom I would consider some of my closest friends.
+            </p>
+
+            <p class="lead">
+              One day I hope to eventually work for either Riot or Blizzard.
+              These games shaped my childhood and it would be an honor to
+              continue with these titles as both a developer and a player.
+            </p>
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
 };
