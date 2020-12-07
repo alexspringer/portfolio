@@ -61,25 +61,25 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
         <Switch>
-          <Route path="/work/SafeSpace">
+          <Route path="portfolio/work/SafeSpace">
             <SafeSpaceScreen />
           </Route>
-          <Route path="/work/Foolsmate">
+          <Route path="portfolio/work/Foolsmate">
             <FoolsmateScreen />
           </Route>
-          <Route path="/work/Bitmap">
+          <Route path="portfolio/work/Bitmap">
             <BitmapScreen />
           </Route>
-          <Route path="/contact">
+          <Route path="portfolio/contact">
             <ContactScreen />
           </Route>
           <Route path="/about">
             <AboutScreen />
           </Route>
-          <Route path="/work">
+          <Route path="portfolio/work">
             <WorkScreen />
           </Route>
-          <Route path="/">
+          <Route path="/portfolio">
             <HomeScreen />
           </Route>
         </Switch>
