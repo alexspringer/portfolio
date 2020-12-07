@@ -28,22 +28,22 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mh-3">
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/">
+                <Nav.Link style={{ fontSize: 25 }} href="/portfolio">
                   Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/about">
+                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/about">
                   About
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/work">
+                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/work">
                   Work
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/contact">
+                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/contact">
                   Contact
                 </Nav.Link>
               </Nav.Item>
@@ -61,22 +61,22 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
         <Switch>
-          <Route path="portfolio/work/SafeSpace">
+          <Route path="/portfolio/work/SafeSpace">
             <SafeSpaceScreen />
           </Route>
-          <Route path="portfolio/work/Foolsmate">
+          <Route path="/portfolio/work/Foolsmate">
             <FoolsmateScreen />
           </Route>
-          <Route path="portfolio/work/Bitmap">
+          <Route path="/portfolio/work/Bitmap">
             <BitmapScreen />
           </Route>
-          <Route path="portfolio/contact">
+          <Route path="/portfolio/contact">
             <ContactScreen />
           </Route>
-          <Route path="/about">
+          <Route path="/portfolio/about">
             <AboutScreen />
           </Route>
-          <Route path="portfolio/work">
+          <Route path="/portfolio/work">
             <WorkScreen />
           </Route>
           <Route path="/portfolio">
