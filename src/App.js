@@ -3,7 +3,12 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as HashRouter,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
 //Screens
 import AboutScreen from "./Screens/About.js";
@@ -19,32 +24,40 @@ import Github from "./Assets/GitHub.png";
 function App() {
   return (
     <body class="mx-0, p-0">
-      <Router>
+      <HashRouter basename="/portfolio">
         <Navbar bg="dark" variant="dark" expand="lg">
-          <Navbar.Brand style={{ fontSize: 30 }} href="/">
+          <Navbar.Brand style={{ fontSize: 30 }}>
             Alex Springer
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mh-3">
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/portfolio">
-                  Home
+                <Nav.Link style={{ fontSize: 25 }}>
+                  <Link style={{ color: "rgba(255,255,255,.5)" }} to="/">
+                    Home
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/about">
-                  About
+                <Nav.Link style={{ fontSize: 25 }} href="/about">
+                  <Link style={{ color: "rgba(255,255,255,.5)" }} to="/about">
+                    About
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/work">
-                  Work
+                <Nav.Link style={{ fontSize: 25 }}>
+                  <Link style={{ color: "rgba(255,255,255,.5)" }} to="/work">
+                    Work
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="mx-3">
-                <Nav.Link style={{ fontSize: 25 }} href="/portfolio/contact">
-                  Contact
+                <Nav.Link style={{ fontSize: 25 }} href="/contact">
+                  <Link style={{ color: "rgba(255,255,255,.5)" }} to="/contact">
+                    Contact
+                  </Link>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
@@ -61,29 +74,29 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
         <Switch>
-          <Route path="/portfolio/work/SafeSpace">
+          <Route path="/work/SafeSpace">
             <SafeSpaceScreen />
           </Route>
-          <Route path="/portfolio/work/Foolsmate">
+          <Route path="/work/Foolsmate">
             <FoolsmateScreen />
           </Route>
-          <Route path="/portfolio/work/Bitmap">
+          <Route path="/work/Bitmap">
             <BitmapScreen />
           </Route>
-          <Route path="/portfolio/contact">
+          <Route path="/contact">
             <ContactScreen />
           </Route>
-          <Route path="/portfolio/about">
+          <Route path="/about">
             <AboutScreen />
           </Route>
-          <Route path="/portfolio/work">
+          <Route path="/work">
             <WorkScreen />
           </Route>
-          <Route path="/portfolio">
+          <Route path="/">
             <HomeScreen />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </body>
   );
 }
