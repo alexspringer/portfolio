@@ -16,9 +16,6 @@ const HomeScreen = (props) => {
           <p class="lead">
             I am a recent Computer Science graduate from Portland Oregon.
           </p>
-          <p>
-            Yo are changes being registered? 
-          </p>
         </Col>
       </Row>
     </Container>
