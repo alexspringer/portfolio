@@ -75,7 +75,7 @@ function App() {
         <Route path="/work/Bitmap" component={BitmapScreen} />
         <Route path="/contact" component={ContactScreen} />
         <Route path="/about" component={AboutScreen} />
-        <Route path="/work" component={WorkScreen} />
+        <Route exact path="/work" component={WorkScreen} />
         <Route exact path="/" component={HomeScreen} />
       </HashRouter>
     </body>
