@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import {
   BrowserRouter as HashRouter,
-  Switch,
   Route,
   Link,
 } from "react-router-dom";
