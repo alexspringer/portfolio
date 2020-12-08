@@ -26,9 +26,7 @@ function App() {
     <body class="mx-0, p-0">
       <HashRouter basename="/portfolio">
         <Navbar bg="dark" variant="dark" expand="lg">
-          <Navbar.Brand style={{ fontSize: 30 }}>
-            Alex Springer
-          </Navbar.Brand>
+          <Navbar.Brand style={{ fontSize: 30 }}>Alex Springer</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mh-3">
@@ -73,29 +71,13 @@ function App() {
             </Container>
           </Navbar.Collapse>
         </Navbar>
-        <Switch>
-          <Route path="/work/SafeSpace">
-            <SafeSpaceScreen />
-          </Route>
-          <Route path="/work/Foolsmate">
-            <FoolsmateScreen />
-          </Route>
-          <Route path="/work/Bitmap">
-            <BitmapScreen />
-          </Route>
-          <Route path="/contact">
-            <ContactScreen />
-          </Route>
-          <Route path="/about">
-            <AboutScreen />
-          </Route>
-          <Route path="/work">
-            <WorkScreen />
-          </Route>
-          <Route path="/">
-            <HomeScreen />
-          </Route>
-        </Switch>
+        <Route path="/work/SafeSpace" component={SafeSpaceScreen} />
+        <Route path="/work/Foolsmate" component={FoolsmateScreen} />
+        <Route path="/work/Bitmap" component={BitmapScreen} />
+        <Route path="/contact" component={ContactScreen} />
+        <Route path="/about" component={AboutScreen} />
+        <Route path="/work" component={WorkScreen} />
+        <Route exact path="/" component={HomeScreen} />
       </HashRouter>
     </body>
   );
